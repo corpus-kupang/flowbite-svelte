@@ -12,9 +12,10 @@
   import Frame from '../utils/Frame.svelte';
   import { setContext } from 'svelte';
 
+  export let spaced: boolean = false;
+
   export let divClass: string = 'w-full md:block md:w-auto';
-  export let ulClass: string =
-    'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium';
+  export let ulClass: string = 'flex flex-col md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium';
   export let hidden: boolean = true;
   export let slideParams: SlideParams = { delay: 250, duration: 500, easing: quintOut };
   export let activeClass: string =
@@ -43,7 +44,7 @@
   </div>
 {:else}
   <div {...$$restProps} class={_divClass} {hidden}>
-    <ul class={_ulClass}>
+    <ul class={_ulClass} class:p-4={spaced} class:mt-4={spaced}>
       <slot />
     </ul>
   </div>
