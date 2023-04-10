@@ -12,7 +12,7 @@
   import Frame from '../utils/Frame.svelte';
   import { setContext } from 'svelte';
 
-  export let spaced: boolean = false;
+  export let spaced: boolean = true;
 
   export let divClass: string = 'w-full md:block md:w-auto';
   export let ulClass: string = 'flex flex-col md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium';
